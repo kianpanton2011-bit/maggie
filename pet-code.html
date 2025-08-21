@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maggie’s Furry Friends - Dog Walking Services</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #ff914d;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff914d;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1601979031545-6bab0f7b25dd?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      position: relative;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      animation: fadeInUp 2s ease;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: url('https://img.icons8.com/ios-filled/50/ffffff/down-squared.png') no-repeat center/contain;
+      animation: bounce 2s infinite;
+    }
+    /* Content */
+    .content {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+    .service-card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff914d;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .service-card button:hover {
+      background: #ff7733;
+    }
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* Testimonials */
+    .testimonials {
+      background: #fff4ec;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+    .testimonial {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background: #ff914d;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    button:hover {
+      background: #ff7733;
+    }
+    /* Back to Top */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff914d;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🐾 Maggie’s Furry Friends</h1>
+    <p>Trusted Dog Walking & Pet Care</p>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h2>Happy Dogs, Happy Owners</h2>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="content" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Daily Walks</h3>
+        <p>Regular walks to keep your dog active and happy.</p>
+        <button onclick="bookService('Daily Walks')">Book</button>
+      </div>
+      <div class="service-card">
+        <h3>Group Walks</h3>
+        <p>Fun social walks with other furry friends.</p>
+        <button onclick="bookService('Group Walks')">Book</button>
+      </div>
+      <div class="service-card">
+        <h3>Pet Sitting</h3>
+        <p>Overnight or day care to keep pets comfortable and loved.</p>
+        <button onclick="bookService('Pet Sitting')">Book</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="content" id="gallery">
+    <h2>Our Happy Beagles 🐕</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1602067340370-bb9f4e90d62d?w=800" alt="Beagle 1">
+      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=800" alt="Beagle 2">
+      <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800" alt="Beagle 3">
+      <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=800" alt="Beagle 4">
+      <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=800" alt="Beagle 5">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1ea69a3?w=800" alt="Beagle 6">
+      <img src="https://images.unsplash.com/photo-1619983081658-949c6f64a8de?w=800" alt="Beagle 7">
+      <img src="https://images.unsplash.com/photo-1626814026161-7f1d9c1d8ef2?w=800" alt="Beagle 8">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=800" alt="Beagle 9">
+      <img src="https://images.unsplash.com/photo-1627843563099-fd8683f7ac12?w=800" alt="Beagle 10">
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="content" id="testimonials">
+    <h2>What Our Clients Say ❤️</h2>
+    <div class="testimonials">
+      <div class="testimonial">"Maggie is amazing! My beagle loves her walks!" – Sarah K.</div>
+      <div class="testimonial">"Trustworthy and caring, I never worry when I’m away." – Tom R.</div>
+      <div class="testimonial">"Professional, reliable, and so kind to my pup!" – Emily L.</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="content" id="about">
+    <h2>About Us</h2>
+    <p>Hi! I’m Maggie, a lifelong dog lover dedicated to giving pets the best care possible. Maggie’s Furry Friends was created to provide safe, reliable, and fun dog walking and pet sitting services. Every pup we care for becomes part of our extended family. 🐶❤️</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p><b>Q:</b> What areas do you cover?<br><b>A:</b> We cover most of the local community within 10 miles.</p>
+    <p><b>Q:</b> Do you offer weekend services?<br><b>A:</b> Yes! We walk and pet sit 7 days a week.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="content" id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:kianpanton2011@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" style="text-align:center; margin:40px;">
+    <h2>Ready to Book a Walk?</h2>
+    <a href="mailto:kianpanton2011@gmail.com?subject=Dog Walking Booking&body=Hi Maggie,%0D%0AI would like to book a walk for my dog.%0D%0A- Dog's name:%0D%0A- Preferred date/time:%0D%0A- Service required:%0D%0AThanks!" 
+       style="background:#ff914d; padding:15px 25px; color:white; border-radius:8px; text-decoration:none;">Book Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Maggie’s Furry Friends | All Rights Reserved</p>
+    <p>Email: kianpanton2011@gmail.com | Phone: (123) 456-7890</p>
+  </footer>
+
+  <!-- Back to Top -->
+  <div id="backToTop" onclick="scrollToTop()">⬆</div>
+
+  <!-- JS -->
+  <script>
+    // Book Now Buttons
+    function bookService(service) {
+      window.location.href = `mailto:kianpanton2011@gmail.com?subject=Booking Request - ${service}&body=Hi Maggie,%0D%0AI would like to book ${service} for my dog.%0D%0A- Dog's name:%0D%0A- Preferred date/time:%0D%0AThanks!`;
+    }
+    // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
